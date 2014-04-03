@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %} Gaming {% endblock %}
+
+{% block table %}
+<table align="center" border="1"  height="360 "width="360" cellpadding="0" bgcolor="LightCyan">
+    <tr>
+       {% if not item.0 %}
+       <td></td>
+       {% else %}
+       <td>{{item.0}}</td>
+       {%endif%}
+       
+       {% if not item.1 %}
+       <td></td>
+       {% else %}
+       <td>{{item.1}}</td>
+       {%endif%}
+
+       {% if not item.2 %}
+       <td></td>
+       {% else %}
+       <td>{{item.2}}</td>
+       {%endif%}
+       
+       {% if not item.3 %}
+       <td></td>
+       {% else %}
+       <td>{{item.3}}</td>
+       {%endif%}
+    </tr>
+
+
+    <tr>
+
+       {% if not item.4 %}
+       <td></td>
+       {% else %}
+       <td>{{item.4}}</td>
+       {%endif%}
+       
+       {% if not item.5 %}
+       <td></td>
+       {% else %}
+       <td>{{item.5}}</td>
+       {%endif%}
+
+       {% if not item.6 %}
+       <td></td>
+       {% else %}
+       <td>{{item.6}}</td>
+       {%endif%}
+       
+       {% if not item.7 %}
+       <td></td>
+       {% else %}
+       <td>{{item.7}}</td>
+       {%endif%}
+    </tr>
+
+    <tr>
+        
+       {% if not item.8 %}
+       <td></td>
+       {% else %}
+       <td>{{item.8}}</td>
+       {%endif%}
+       
+       {% if not item.9 %}
+       <td></td>
+       {% else %}
+       <td>{{item.9}}</td>
+       {%endif%}
+
+       {% if not item.10 %}
+       <td></td>
+       {% else %}
+       <td>{{item.10}}</td>
+       {%endif%}
+       
+       {% if not item.11 %}
+       <td></td>
+       {% else %}
+       <td>{{item.11}}</td>
+       {%endif%}
+    </tr>
+    
+    <tr>
+
+       {% if not item.12 %}
+       <td></td>
+       {% else %}
+       <td>{{item.12}}</td>
+       {%endif%}
+       
+       {% if not item.13 %}
+       <td></td>
+       {% else %}
+       <td>{{item.13}}</td>
+       {%endif%}
+
+       {% if not item.14 %}
+       <td></td>
+       {% else %}
+       <td>{{item.14}}</td>
+       {%endif%}
+       
+       {% if not item.15 %}
+       <td></td>
+       {% else %}
+       <td>{{item.15}}</td>
+       {%endif%}
+    </tr>
+</table>
+{% endblock %}
+
+{% block button %}
+
+    <div class="ui center aligned inverted teal segment">
+{% if failed %}
+        faild!
+        press restart.
+{% endif %}
+{% if success %}
+        Congratulations!
+        You succeed!
+{% endif %}
+
+{% if notyet %}
+    Use up,down,right,and left to play!
+{%endif%}
+   </div>
+
+
+<div class="ui inverted red circular button" id="restart">
+    Restart
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+
+    $(document).ready(function(){
+        $("#restart").click(function(){
+            window.location="/start/"
+        })
+    })
+
+
+    document.onkeydown=function(){
+        if(event.keyCode==38) window.location="/gaming/up";
+        if(event.keyCode==37) window.location="/gaming/left";
+        if(event.keyCode==39) window.location="/gaming/right";
+        if(event.keyCode==40) window.location="/gaming/down";
+    }
+
+</script>
+{% endblock %}

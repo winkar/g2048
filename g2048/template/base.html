@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/site_media/semantic/packaged/css/semantic.css" rel="stylesheet">
+    <script src="/site_media/js/jquery-1.7.2.js"></script>
+    <style>
+        td
+        {
+            height:90px;
+            width:90px;
+            font-size:60px;
+            text-align:center;
+        }
+        
+    </style>
+</head>
+
+<body style="background-color:#DEDCDE;margin:0px;">
+
+    <div class="ui center aligned huge inverted purple header"> 
+        2048 Game 
+        <br/> 
+        <small>
+            <i>
+             by winkar
+            </i>
+        </small>
+    </div>
+
+    {% block table %}
+    <table align="center" border="1"  height="360 "width="360" cellpadding="0" bgcolor="LightCyan">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    {% endblock %}
+
+    <div class="ui center aligned basic segment">
+    {% block button %} 
+        <div class="ui inverted blue button" id="start">
+            Start Game
+        </div>
+    {% endblock %}       
+    </div>
+
+</body>
+    {% block script %}
+    <script>
+    $(document).ready(function(){
+        $("#start").click(function(){
+            window.location="start/"
+        })
+    })
+    </script>
+    {% endblock %}
+        
+</html>
